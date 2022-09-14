@@ -60,4 +60,9 @@ void loop() {
     Serial.println(F("°C"));
     sprintf(msg, "%f", event.temperature);
   }
+  dht.humidity().getEvent(&event);
+  if(isnan(event.relative_humidity))
+  {
+    Serial.println(F("Erro na leitura da umidade!"));
+  }
 }
