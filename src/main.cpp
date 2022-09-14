@@ -65,4 +65,11 @@ void loop() {
   {
     Serial.println(F("Erro na leitura da umidade!"));
   }
+  else
+  {
+    Serial.print(F("Umidade: "));
+    Serial.print(event.relative_humidity);
+    Serial.println(F("%"));
+    sprintf(msg, "%f", event.relative_humidity);
+  }
 }
