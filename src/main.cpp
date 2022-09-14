@@ -4,6 +4,8 @@
 #include <DHT.h> //Inclusão Biblioteca Sensor DHT22
 #include <DHT_U.h> //Inclusão Biblioteca Sensor DHT22
 
+const char* ssid = "<your wifi name>"; //O Nome da sua rede WIFI
+const char* password = "<your wifi password>"; // A Senha da rede WIFI
 #define DHTPIN 4 //Define o correspodente ao D4
 #define DHTTYPE DHT22 //Define o tipo de DHT
 #define MSG_BUFFER_SIZE (50) //Define o tamanho do Buffer de Recebimento
