@@ -46,4 +46,7 @@ void setup() {
 }
 
 void loop() {
+  delay(delayMS);
+  sensors_event_t event;
+  dht.temperature().getEvent(&event);
 }
