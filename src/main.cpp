@@ -53,4 +53,11 @@ void loop() {
   {
     Serial.println(F("Erro na leitura da temperatura!"));
   }
+  else
+  {
+    Serial.print(F("Temperatura: "));
+    Serial.print(event.temperature);
+    Serial.println(F("°C"));
+    sprintf(msg, "%f", event.temperature);
+  }
 }
