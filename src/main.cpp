@@ -49,4 +49,8 @@ void loop() {
   delay(delayMS);
   sensors_event_t event;
   dht.temperature().getEvent(&event);
+  if(isnan(event.temperature))
+  {
+    Serial.println(F("Erro na leitura da temperatura!"));
+  }
 }
