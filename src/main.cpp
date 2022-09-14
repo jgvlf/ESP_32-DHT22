@@ -30,4 +30,17 @@ void setup() {
   Serial.println(F("°C"));
   Serial.println(F("--------------------------------------------------"));
 
+  dht.humidity().getSensor(&sensor);
+  Serial.println(F("--------------------------------------------------"));
+  Serial.println(F("Umidade"));
+  Serial.print(F("Sensor:"));
+  Serial.println(sensor.name);
+  Serial.print("Valor máximo: ");
+  Serial.print(sensor.max_value);
+  Serial.println(F("%"));
+  Serial.print("Valor mínimo: ");
+  Serial.print(sensor.min_value);
+  Serial.println(F("%"));
+  Serial.println(F("--------------------------------------------------"));
+  delayMS = sensor.min_delay / 1000;
 }
