@@ -7,6 +7,10 @@
 const char* ssid = "<your wifi name>"; //O Nome da sua rede WIFI
 const char* password = "<your wifi password>"; // A Senha da rede WIFI
 const char* mqtt_server = "broker.mqtt-dashboard.com"; //Endereço do broker em núvem disponível
+
+WiFiClient espClient; //Cliente ESP WIFI
+PubSubClient client(espClient); //Cliente ESP Publicador e Subscrito
+
 #define DHTPIN 4 //Define o correspodente ao D4
 #define DHTTYPE DHT22 //Define o tipo de DHT
 #define MSG_BUFFER_SIZE (50) //Define o tamanho do Buffer de Recebimento
