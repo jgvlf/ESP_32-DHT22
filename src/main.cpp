@@ -3,3 +3,11 @@
 #include <DHT.h> //Inclusão Biblioteca Sensor DHT22
 #include <DHT_U.h> //Inclusão Biblioteca Sensor DHT22
 
+#define DHTPIN 4 //Define o correspodente ao D4
+#define DHTTYPE DHT22 //Define o tipo de DHT
+#define MSG_BUFFER_SIZE (50) //Define o tamanho do Buffer de Recebimento
+char msg[MSG_BUFFER_SIZE]; //Mensagem de tamanho definido pelo Buffer
+DHT_Unified dht(DHTPIN, DHTTYPE); //Valor do Pino e o tipo de DHT
+uint32_t delayMS; // Váriavel de atraso
+unsigned long lastMsg = 0; //Atribui o valor zero à variável "LastMsg"
+int value = 0; //Atribui o valor zero à variável "Value"
