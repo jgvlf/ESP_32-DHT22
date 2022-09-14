@@ -16,5 +16,18 @@ void setup() {
   Serial.begin(115200);
   dht.begin();
   Serial.println(F("Sensor DHT22"));
+  sensor_t sensor;
+  dht.temperature().getSensor(&sensor);
+  Serial.println(F("--------------------------------------------------"));
+  Serial.println(F("Temperatura"));
+  Serial.print(F("Sensor:"));
+  Serial.println(sensor.name);
+  Serial.print("Valor máximo: ");
+  Serial.print(sensor.max_value);
+  Serial.println(F("°C"));
+  Serial.print("Valor mínimo: ");
+  Serial.print(sensor.min_value);
+  Serial.println(F("°C"));
+  Serial.println(F("--------------------------------------------------"));
 
 }
