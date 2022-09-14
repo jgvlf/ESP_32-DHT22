@@ -44,3 +44,6 @@ void setup() {
   Serial.println(F("--------------------------------------------------"));
   delayMS = sensor.min_delay / 1000;
 }
+
+void loop() {
+}
