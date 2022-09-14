@@ -13,5 +13,8 @@ unsigned long lastMsg = 0; //Atribui o valor zero à variável "LastMsg"
 int value = 0; //Atribui o valor zero à variável "Value"
 
 void setup() {
+  Serial.begin(115200);
+  dht.begin();
+  Serial.println(F("Sensor DHT22"));
 
 }
