@@ -45,6 +45,13 @@ void reconnect(){
       Serial.println("Conectado");
       client.subscribe("TLG/Server");
     }
+    else{
+      Serial.print("falhou, rc=");
+      Serial.print(client.state());
+      Serial.println("tente novamente em 5s");
+      delay(5000);
+    }
+  }
 }
 
 void setup() {
