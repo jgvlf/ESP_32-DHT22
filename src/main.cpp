@@ -37,6 +37,10 @@ void setup_wifi(){
 }
 
 void reconnect(){
+  while(!client.connected()){
+    Serial.print("Aguardando conexão MQTT...");
+    String clientId = "ESP32Client";
+    clientId += String(random(0xffff), HEX);
 }
 
 void setup() {
