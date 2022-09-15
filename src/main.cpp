@@ -43,6 +43,7 @@ void reconnect(){
     clientId += String(random(0xffff), HEX);
     if(client.connect(clientId.c_str())){
       Serial.println("Conectado");
+      client.subscribe("TLG/Server");
     }
 }
 
