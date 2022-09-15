@@ -150,4 +150,8 @@ void loop() {
     sprintf(msg, "%f", event.relative_humidity);
     client.publish("TLG/umidade", msg);
   }
+  if(!client.connected()){
+    reconnect();
+  }
+  client.loop();
 }
