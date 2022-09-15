@@ -23,7 +23,7 @@ int value = 0; //Atribui o valor zero à variável "Value"
 void setup_wifi(){
   delay(10);
   Serial.println("");
-  Serial.print("Conectando com");
+  Serial.print("Conectando com ");
   Serial.println(ssid);
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED){
