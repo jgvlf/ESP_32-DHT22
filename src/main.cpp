@@ -25,6 +25,7 @@ void setup_wifi(){
   Serial.println("");
   Serial.print("Conectando com");
   Serial.println(ssid);
+  WiFi.begin(ssid, password);
 }
 
 void setup() {
