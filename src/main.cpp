@@ -59,19 +59,10 @@ void setup() {
   setup_wifi();
   client.setServer(mqtt_server, 1883);
   dht.begin();
-  dht.temperature().getEvent(&event);
-  if(isnan(event.temperature)){
-    Serial.println(F("Erro na leitura da temperatura!"));
-  }
-  else{
-    Serial.print(F("Temperatura: "));
-    Serial.print(event.temperature);
-    Serial.println(F("°C"));
-    sprintf(msg, "%f", event.temperature);
-    client.publish("TLG/temperatura", msg);
-  }
+
   Serial.println(F("Sensor DHT22"));
   sensor_t sensor;
+
   dht.temperature().getSensor(&sensor);
   Serial.println(F("--------------------------------------------------"));
   Serial.println(F("Temperatura"));
@@ -82,6 +73,7 @@ void setup() {
   Serial.println(F("°C"));
   Serial.print("Valor mínimo: ");
   Serial.print(sensor.min_value);
+
   Serial.println(F("°C"));
   Serial.println(F("--------------------------------------------------"));
 
@@ -98,11 +90,17 @@ void setup() {
   Serial.println(F("%"));
   Serial.println(F("--------------------------------------------------"));
   delayMS = sensor.min_delay / 1000;
+
 }
 
 void loop() {
   delay(delayMS);
   sensors_event_t event;
+
+
+
+  
+
   dht.temperature().getEvent(&event);
   if(isnan(event.temperature))
   {
@@ -127,4 +125,6 @@ void loop() {
     Serial.println(F("%"));
     sprintf(msg, "%f", event.relative_humidity);
   }
+
+
 }
