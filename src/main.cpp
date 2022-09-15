@@ -30,6 +30,10 @@ void setup_wifi(){
     delay(500);
     Serial.println(".");
   }
+  Serial.println("");
+  Serial.println("WiFi conectado");
+  Serial.println("IP: ");
+  Serial.println(WiFi.localIP());
 }
 
 void setup() {
