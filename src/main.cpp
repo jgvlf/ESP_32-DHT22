@@ -59,6 +59,17 @@ void setup() {
   setup_wifi();
   client.setServer(mqtt_server, 1883);
   dht.begin();
+  dht.temperature().getEvent(&event);
+  if(isnan(event.temperature)){
+    Serial.println(F("Erro na leitura da temperatura!"));
+  }
+  else{
+    Serial.print(F("Temperatura: "));
+    Serial.print(event.temperature);
+    Serial.println(F("°C"));
+    sprintf(msg, "%f", event.temperature);
+    client.publish("TLG/temperatura", msg);
+  }
   Serial.println(F("Sensor DHT22"));
   sensor_t sensor;
   dht.temperature().getSensor(&sensor);
