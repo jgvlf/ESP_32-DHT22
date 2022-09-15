@@ -20,6 +20,9 @@ uint32_t delayMS; // Váriavel de atraso
 unsigned long lastMsg = 0; //Atribui o valor zero à variável "LastMsg"
 int value = 0; //Atribui o valor zero à variável "Value"
 
+void setup_wifi(){
+}
+
 void setup() {
   Serial.begin(115200);
   setup_wifi();
