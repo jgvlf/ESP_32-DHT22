@@ -139,4 +139,15 @@ void loop() {
     client.publish("TLG/temperatura", msg);
   }
 
+  dht.humidity().getEvent(&event);
+  if(isnan(event.relative_humidity)){
+    Serial.println(F("Erro na leitura da umidade!"));
+  }
+  else{
+    Serial.print(F("Umidade: "));
+    Serial.print(event.relative_humidity);
+    Serial.println(F("%"));
+    sprintf(msg, "%f", event.relative_humidity);
+    client.publish("TLG/umidade", msg);
+  }
 }
