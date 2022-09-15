@@ -36,6 +36,9 @@ void setup_wifi(){
   Serial.println(WiFi.localIP());
 }
 
+void reconnect(){
+}
+
 void setup() {
   Serial.begin(115200);
   setup_wifi();
