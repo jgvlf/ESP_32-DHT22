@@ -22,6 +22,7 @@ int value = 0; //Atribui o valor zero à variável "Value"
 
 void setup() {
   Serial.begin(115200);
+  client.setServer(mqtt_server, 1883);
   dht.begin();
   Serial.println(F("Sensor DHT22"));
   sensor_t sensor;
